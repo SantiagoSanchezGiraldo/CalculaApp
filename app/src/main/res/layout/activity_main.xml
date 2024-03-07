@@ -9,7 +9,12 @@
     android:gravity="center"
     android:background="@color/white">
 
-
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_rawRes="@raw/animacionc"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
 </LinearLayout>

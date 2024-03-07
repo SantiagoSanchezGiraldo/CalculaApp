@@ -30,21 +30,27 @@ public class respuesta extends AppCompatActivity {
         String rArea = recibirDatos.getString("datoArea");
         String rPerim = recibirDatos.getString("datoPerim");
 
-        float vSeno, vCos, vArea, vPerim, resSeno, resCos, resArea, resPerim;
-        vSeno = Float.parseFloat(rSeno);
-        //vCos = Float.parseFloat(coseno.getText().toString());
-        //vArea = Float.parseFloat(area.getText().toString());
-        //vPerim = Float.parseFloat(perim.getText().toString());
+        String strSeno, strCos, strArea,strPerim;
+        double vSeno, vCos, vArea, vPerim, resSeno, resCos, resArea, resPerim;
+        vSeno = Double.parseDouble(rSeno);
+        vCos = Double.parseDouble(rCos);
+        vArea = Double.parseDouble(rArea);
+        vPerim = Double.parseDouble(rPerim);
 
-        resSeno = vSeno + 1;
-        //resCos = 1;
-        // resArea = (vArea * vArea);
-        //resPerim = (vPerim * 4);
+        resSeno = Math.sin(Math.toRadians(vSeno));
+        resCos = Math.cos(Math.toRadians(vCos));
+        resArea = (vArea * vArea);
+        resPerim = (vPerim * 4);
 
-        solvSeno.setText(resSeno);
-        solvCoseno.setText(rCos);
-        solvArea.setText(rArea);
-        solvPerim.setText(rPerim);
+        strSeno = String.valueOf(resSeno);
+        strCos = String.valueOf(resCos);
+        strArea = String.valueOf(resArea);
+        strPerim = String.valueOf(resPerim);
+
+        solvSeno.setText(strSeno);
+        solvCoseno.setText(strCos);
+        solvArea.setText(strArea);
+        solvPerim.setText(strPerim);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
